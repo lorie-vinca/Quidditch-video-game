@@ -45,6 +45,7 @@ class Game {
     this.playerImg = loadImage("/assets/player/Harry_Potter_Quidditch-removebg-preview.png");
     // load in images/gifs here
     this.bludgerImg = loadImage("/assets/bludger/bludger.png");
+    this.treasureImg = loadImage("/assets/treasure/snitch.png");
   }
   setupGame() {
     // this.obstacle = new Obstacle();
@@ -55,6 +56,7 @@ class Game {
     // NB: we DON'T initialize the coins here because we create them dynamically in the draw
     this.player = new Player();
     this.player.image = this.playerImg;
+    this.treasure = new Treasure(this.treasureImg);
   }
 
   drawGame() {
@@ -79,5 +81,9 @@ class Game {
         return true;
       }
     });
+
+    this.treasure.drawTreasure();
+
   }
+
 }
