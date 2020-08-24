@@ -1,9 +1,9 @@
 class Obstacle {
   constructor(img) {
-    this.height = 50;
-    this.width = 50;
+    this.height = 40;
+    this.width = 40;
     this.x = width;
-    this.y = (Math.random() * height) / 1.5;
+    this.y = (Math.random() * height);
     this.image = img;
   }
 
@@ -21,7 +21,7 @@ class Obstacle {
   }
 
   drawObstacle() {
-    this.x -= 4;
+    this.x -= 6;
     console.log("working?");
     image(this.image, this.x, this.y, this.width, this.height);
   }

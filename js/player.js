@@ -1,10 +1,10 @@
 class Player {
   constructor() {
     // set the height, the initial location + the jump controls for the player
-    this.height = 100;
-    this.width = 100;
+    this.height = 200;
+    this.width = 200;
     this.x = 0;
-    this.y = height - this.height;
+    this.y = 150;
     this.gravity = 0.4;
     this.velocity = 0;
 
@@ -21,14 +21,20 @@ class Player {
       this.y = height - this.height;
     }
 
+    if (this.y <= 0) {
+      this.y = 0;
+    }
+
     image(this.image, this.x, this.y, this.height, this.width);
   }
 
-  // add a jump function
+  // Move functions for player
+
   jump() {
     console.log("this will be the jump");
-    if (this.y === height - this.height) {
-      this.velocity = -10;
-    }
+    this.velocity = -10;
+    //  // if (this.y === height - this.height) {(keep it on the ground)
+    //     
+    //   }
   }
 }

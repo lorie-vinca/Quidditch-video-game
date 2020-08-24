@@ -1,11 +1,10 @@
 class Game {
   constructor() {
-    // define the empty array for the coins here
+    // define the empty array for the bludgers here
     this.obstacles = [];
   }
   preloadGame() {
-    this.backgroundImgs = [
-      {
+    this.backgroundImgs = [{
         src: loadImage("../assets/background/plx-1.png"),
         x: 0,
         speed: 0,
@@ -30,10 +29,22 @@ class Game {
         x: 0,
         speed: 4,
       },
+      {
+        src: loadImage("../assets/background/plx-6.png"),
+        x: 0,
+        speed: 4,
+      },
+
+      {
+        src: loadImage("../assets/background/plx-7.png"),
+        x: 0,
+        speed: 4,
+      }
+
     ];
-    this.playerImg = loadImage("./assets/player/bb8.gif");
+    this.playerImg = loadImage("/assets/player/Harry_Potter_Quidditch-removebg-preview.png");
     // load in images/gifs here
-    this.coinImg = loadImage("./assets/coins/tile000.png");
+    this.bludgerImg = loadImage("/assets/bludger/bludger.png");
   }
   setupGame() {
     // this.obstacle = new Obstacle();
@@ -51,8 +62,8 @@ class Game {
     this.background.drawBackground();
     this.player.drawPlayer();
 
-    if (frameCount % 60 === 0) {
-      this.obstacles.push(new Obstacle(this.coinImg));
+    if (frameCount % 70 === 0) {
+      this.obstacles.push(new Obstacle(this.bludgerImg));
     }
 
     this.obstacles.forEach((obstacle) => {
