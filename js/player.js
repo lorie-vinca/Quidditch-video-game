@@ -7,6 +7,7 @@ class Player {
     this.y = 150;
     this.gravity = 0.4;
     this.velocity = 0;
+    this.health = 4;  
 
     this.image;
   }
@@ -37,4 +38,15 @@ class Player {
     //     
     //   }
   }
+
+  receiveDamage() {
+    this.health -= 1;
+    console.log(this.health);
+    return this.health;
+  }
+
+  catchTreasure() {
+
+  }
+
 }

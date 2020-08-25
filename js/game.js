@@ -61,6 +61,8 @@ class Game {
 
   drawGame() {
     clear();
+
+    //  call the draw functions for the player + the background
     this.background.drawBackground();
     this.player.drawPlayer();
 
@@ -68,12 +70,15 @@ class Game {
       this.obstacles.push(new Obstacle(this.bludgerImg));
     }
 
+    // this.obstacle.drawObstacle();
+    // define the obstacle drawing logic + add a new obstacle to  the array in the constructor with the image passed into it
+
     this.obstacles.forEach((obstacle) => {
       obstacle.drawObstacle();
     });
-    // this.obstacle.drawObstacle();
-    //  call the draw functions for the player + the background
-    // define the obstacle drawing logic + add a new obstacle to  the array in the constructor with the image passed into it
+
+
+
     this.obstacles = this.obstacles.filter((obstacle) => {
       if (obstacle.collision(this.player)) {
         return false;
@@ -84,6 +89,12 @@ class Game {
 
     this.treasure.drawTreasure();
 
-  }
+   
+    if (this.treasure.collisionSnitch(this.player)) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
 }

@@ -5,14 +5,9 @@ class Obstacle {
     this.x = width;
     this.y = (Math.random() * height);
     this.image = img;
-    this.health = 4;
   }
 
-  receiveDamage() {
-    this.health -= 1;
-    console.log(this.health);
-    return this.health;
-  }
+
 
   //   define the collision function
   collision(playerInfo) {
@@ -23,10 +18,12 @@ class Obstacle {
     // console.log(obstacleX, obstacleY, playerX, playerY);
 
     if (dist(obstacleX, obstacleY, playerX, playerY) < 50) {
-      this.receiveDamage()
+      playerInfo.receiveDamage()
+      console.log('aie, I just hit a bludger')
       return true;
     }
   }
+
 
   drawObstacle() {
     this.x -= 6;

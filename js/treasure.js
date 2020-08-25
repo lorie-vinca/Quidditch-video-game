@@ -1,42 +1,56 @@
 class Treasure {
+
     constructor(img) {
         this.height = 100;
         this.width = 100;
-        this.x = 200;
-        this.y = height;
+        this.x = 400;
+        this.y = height - this.height;
         this.image = img;
+        this.speed = 5
+        this.speedX = 5
     }
 
-    //   define the collision function
-    // collision(playerInfo) {
-    //   let obstacleX = this.x + this.width / 2;
-    //   let obstacleY = this.y + this.height / 2;
-    //   let playerX = playerInfo.x + playerInfo.width / 2;
-    //   let playerY = playerInfo.y + playerInfo.height / 2;
-    //   console.log(obstacleX, obstacleY, playerX, playerY);
+    //define the Snitch collision function
+    collisionSnitch(playerInfo) {
+        let treasureX = this.x + this.width / 2;
+        let treasureY = this.y + this.height / 2;
+        let playerX = playerInfo.x + playerInfo.width / 2;
+        let playerY = playerInfo.y + playerInfo.height / 2;
+        //console.log(treasureX, treasureY, playerX, playerY);
 
-    //   if (dist(obstacleX, obstacleY, playerX, playerY) < 50) {
-    //     return true;
+        if (dist(treasureX, treasureY, playerX, playerY) < 50) {
+            console.log("I caught the snicth!")
+
+            return true;
+
+        }
+    }
 
 
     drawTreasure() {
-        //console.log(this.image)
+
+        console.log("help", this.image)
         image(this.image, this.x, this.y, this.width, this.height);
+        //     // Jiggling randomly on the horizontal axis
+        this.x += this.speedX
+        //     // Moving up at a constant speed
+        this.y -= this.speed;
 
-        // Jiggling randomly on the horizontal axis
-        this.x = this.x + random(-1, 1);
-        // Moving up at a constant speed
-        this.y = this.y - 1 + random(-1, 1);
+        if (this.y <= 0 || this.y >= height - this.height) {
+            this.speed *= -1;
+        }
+        //  ​
 
-
-        //don't leave the screen up
-        if (this.y <= 0) {
-            this.y = 0;
+        if (this.x <= 400 || this.x >= width - this.width) {
+            this.speedX *= -1
         }
 
+
+        //     // don't leave the screen right side
+
         // Reset to the bottom
-       // if (this.y < 0) {
-          //  this.y = height;
-       // }
+        // if (this.y < 0) {
+        //     this.y = height;
+        // }
     }
 }
