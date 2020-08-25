@@ -6,8 +6,8 @@ class Treasure {
         this.x = 400;
         this.y = height - this.height;
         this.image = img;
-        this.speed = 5
-        this.speedX = 5
+        this.speed = 6
+        this.speedX = 6
     }
 
     //define the Snitch collision function

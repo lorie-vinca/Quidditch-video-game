@@ -18,4 +18,13 @@ function keyPressed() {
   if (keyCode === 32) {
     game.player.jump();
   }
+
+  if (keyCode === 39) {
+    game.player.goForward();
+  }
+
+  if (keyCode === 37) {
+    game.player.goBack();
+  }
+
 }

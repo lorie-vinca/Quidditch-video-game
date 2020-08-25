@@ -24,6 +24,9 @@ class Player {
 
     if (this.y <= 0) {
       this.y = 0;
+      
+
+      
     }
 
     image(this.image, this.x, this.y, this.height, this.width);
@@ -38,6 +41,27 @@ class Player {
     //     
     //   }
   }
+
+  goForward() {
+    console.log("this will be going forward");
+    this.x += 100;
+
+   
+    //  // if (this.y === height - this.height) {(keep it on the ground)
+    //     
+    //   }
+  }
+
+
+  goBack() {
+    console.log("this will be going forward");
+    this.x -= 100;
+    //  // if (this.y === height - this.height) {(keep it on the ground)
+    //     
+    //   }
+  }
+
+
 
   receiveDamage() {
     this.health -= 1;
