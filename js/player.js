@@ -24,13 +24,23 @@ class Player {
 
     if (this.y <= 0) {
       this.y = 0;
-      
+     }
 
-      
-    }
+
+      if (this.x >= width-this.width) {
+        this.x = width - this.width;
+
+      }
+
+        if (this.x <= 0) {
+          this.x = 0;
+        
+      }
+    
 
     image(this.image, this.x, this.y, this.height, this.width);
-  }
+  
+}
 
   // Move functions for player
 
