@@ -77,6 +77,7 @@ class Player {
     this.health -= 1;
     console.log(this.health);
     return this.health;
+
   }
 
   catchTreasure() {

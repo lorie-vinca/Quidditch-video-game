@@ -3,7 +3,7 @@ class Treasure {
     constructor(img) {
         this.height = 100;
         this.width = 100;
-        this.x = 800;
+        this.x = 400;
         this.y = height - this.height;
         this.image = img;
         this.speed = 6

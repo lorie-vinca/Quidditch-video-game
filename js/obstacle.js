@@ -23,7 +23,7 @@ class Obstacle {
       const lifeCounter = document.querySelector('#score span')
       lifeCounter.innerText = playerInfo.health
       console.log(lifeCounter)
-      return true;
+      return true; 
     }
   }
 
