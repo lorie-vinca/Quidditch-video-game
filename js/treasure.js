@@ -3,7 +3,7 @@ class Treasure {
     constructor(img) {
         this.height = 100;
         this.width = 100;
-        this.x = 400;
+        this.x = 800;
         this.y = height - this.height;
         this.image = img;
         this.speed = 6
@@ -29,7 +29,7 @@ class Treasure {
 
     drawTreasure() {
 
-        console.log("help", this.image)
+        //console.log("help", this.image)
         image(this.image, this.x, this.y, this.width, this.height);
         //     // Jiggling randomly on the horizontal axis
         this.x += this.speedX

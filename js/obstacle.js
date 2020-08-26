@@ -20,6 +20,9 @@ class Obstacle {
     if (dist(obstacleX, obstacleY, playerX, playerY) < 50) {
       playerInfo.receiveDamage()
       console.log('aie, I just hit a bludger')
+      const lifeCounter = document.querySelector('#score span')
+      lifeCounter.innerText = playerInfo.health
+      console.log(lifeCounter)
       return true;
     }
   }
