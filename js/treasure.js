@@ -6,7 +6,7 @@ class Treasure {
         this.x = 400;
         this.y = height - this.height;
         this.image = img;
-        this.speed = 6
+        this.speed = 10
         this.speedX = 6
     }
 
@@ -29,28 +29,33 @@ class Treasure {
 
     drawTreasure() {
 
-        //console.log("help", this.image)
-        image(this.image, this.x, this.y, this.width, this.height);
-        //     // Jiggling randomly on the horizontal axis
-        this.x += this.speedX
-        //     // Moving up at a constant speed
-        this.y -= this.speed;
+        if (frameCount >= 360) {
+            //console.log("help", this.image)
+            image(this.image, this.x, this.y, this.width, this.height);
+            //     // Jiggling randomly on the horizontal axis
+            this.x += this.speedX
+            //     // Moving up at a constant speed
+            this.y -= this.speed;
 
-        if (this.y <= 0 || this.y >= height - this.height) {
-            this.speed *= -1;
+            if (this.y <= 0 || this.y >= height - this.height) {
+                this.speed *= -1;
+            }
+            //  ​
+
+            if (this.x <= 400 || this.x >= width - this.width) {
+                this.speedX *= -1
+            }
+
+
+            //     // don't leave the screen right side
+
+            // Reset to the bottom
+            // if (this.y < 0) {
+            //     this.y = height;
+            // }
         }
-        //  ​
 
-        if (this.x <= 400 || this.x >= width - this.width) {
-            this.speedX *= -1
-        }
-
-
-        //     // don't leave the screen right side
-
-        // Reset to the bottom
-        // if (this.y < 0) {
-        //     this.y = height;
-        // }
     }
+
+
 }

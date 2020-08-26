@@ -7,13 +7,20 @@ class Player {
     this.y = 150;
     this.gravity = 0.4;
     this.velocity = 0;
-    this.health = 4;  
-
+    this.health = 4;
+    this.gameOverImg;
     this.image;
   }
 
   drawPlayer() {
     // draw the player + jump logic with velocity
+    if (this.health <= 0) {
+      game.gameLevel = 2
+     // image(this.gameOverImg, 100, 100, 100, 100);
+     // frameRate(0)
+
+    }
+
 
     this.velocity += this.gravity;
     this.y += this.velocity;
@@ -24,23 +31,23 @@ class Player {
 
     if (this.y <= 0) {
       this.y = 0;
-     }
+    }
 
 
-      if (this.x >= width-this.width) {
-        this.x = width - this.width;
+    if (this.x >= width - this.width) {
+      this.x = width - this.width;
 
-      }
+    }
 
-        if (this.x <= 0) {
-          this.x = 0;
-        
-      }
-    
+    if (this.x <= 0) {
+      this.x = 0;
+
+    }
+
 
     image(this.image, this.x, this.y, this.height, this.width);
-  
-}
+
+  }
 
   // Move functions for player
 
@@ -56,7 +63,7 @@ class Player {
     console.log("this will be going forward");
     this.x += 100;
 
-   
+
     //  // if (this.y === height - this.height) {(keep it on the ground)
     //     
     //   }
@@ -77,6 +84,7 @@ class Player {
     this.health -= 1;
     console.log(this.health);
     return this.health;
+
 
   }
 

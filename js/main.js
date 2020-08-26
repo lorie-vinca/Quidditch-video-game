@@ -15,6 +15,11 @@ function draw() {
 
 // Have to add others keys (go up and go down)
 function keyPressed() {
+
+if (keyCode === 13 && game.gameLevel === 0 || game.gameLevel == 2) {
+    game.gameLevel = 1;
+  }
+
   if (keyCode === 32) {
     game.player.jump();
   }
