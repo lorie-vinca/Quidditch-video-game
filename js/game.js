@@ -7,50 +7,50 @@ class Game {
   }
   preloadGame() {
     this.backgroundImgs = [{
-        src: loadImage("../assets/background/plx-1.png"),
+        src: loadImage("assets/background/plx-1.png"),
         x: 0,
         speed: 0,
       },
       {
-        src: loadImage("../assets/background/plx-2.png"),
+        src: loadImage("assets/background/plx-2.png"),
         x: 0,
         speed: 1,
       },
       {
-        src: loadImage("../assets/background/plx-3.png"),
+        src: loadImage("assets/background/plx-3.png"),
         x: 0,
         speed: 2,
       },
       {
-        src: loadImage("../assets/background/plx-4.png"),
+        src: loadImage("assets/background/plx-4.png"),
         x: 0,
         speed: 3,
       },
       {
-        src: loadImage("../assets/background/plx-5.png"),
+        src: loadImage("assets/background/plx-5.png"),
         x: 0,
         speed: 4,
       },
       {
-        src: loadImage("../assets/background/plx-6.png"),
+        src: loadImage("assets/background/plx-6.png"),
         x: 0,
         speed: 4,
       },
 
       {
-        src: loadImage("../assets/background/plx-7.png"),
+        src: loadImage("assets/background/plx-7.png"),
         x: 0,
         speed: 4,
       }
 
     ];
-    this.playerImg = loadImage("/assets/player/Harry_Potter_Quidditch-removebg-preview.png");
+    this.playerImg = loadImage("assets/player/Harry_Potter_Quidditch-removebg-preview.png");
     // load in images/gifs here
-    this.bludgerImg = loadImage("/assets/bludger/bludger.png");
-    this.startImg = loadImage("/assets/Levels/New Project-2.png")
-    this.treasureImg = loadImage("/assets/treasure/new-snitch.png");
-    this.gameOverImg = loadImage("/assets/Levels/Gameover.png");
-    this.gameWiningImg = loadImage("/assets/Levels/You-win-harry.png")
+    this.bludgerImg = loadImage("assets/bludger/bludger.png");
+    this.startImg = loadImage("assets/Levels/New Project-2.png")
+    this.treasureImg = loadImage("assets/treasure/new-snitch.png");
+    this.gameOverImg = loadImage("assets/Levels/Gameover.png");
+    this.gameWiningImg = loadImage("assets/Levels/You-win-harry.png")
   }
   setupGame() {
     // this.obstacle = new Obstacle();
@@ -119,8 +119,8 @@ class Game {
       this.treasure.drawTreasure();
 
 
-// this is checking if you win (catching the snitch)
-    
+      // this is checking if you win (catching the snitch)
+
 
 
 
@@ -135,15 +135,14 @@ class Game {
     }
 
     if (this.treasure.collisionSnitch(this.player)) {
-      clear()
-      game.gameLevel ===  3;
-    lifeCounter.parentNode.style.visibility = "hidden"
-    image(this.gameWiningImg, 0, 0, width, height);
-      console.log("I won");
-      // frameRate(0)
+      game.gameLevel = 3;
     }
 
-
+    if (this.gameLevel == 3) {
+      clear()
+      lifeCounter.parentNode.style.visibility = "hidden"
+      image(this.gameWiningImg, 0, 0, width, height);
+    }
 
   }
   isGameFinished() {
