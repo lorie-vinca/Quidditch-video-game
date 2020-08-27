@@ -1,6 +1,7 @@
 class Player {
   constructor() {
     // set the height, the initial location + the jump controls for the player
+
     this.height = 200;
     this.width = 200;
     this.x = 0;
@@ -13,14 +14,12 @@ class Player {
   }
 
   drawPlayer() {
+
     // draw the player + jump logic with velocity
     if (this.health <= 0) {
       game.gameLevel = 2
-      // image(this.gameOverImg, 100, 100, 100, 100);
       // frameRate(0)
-
     }
-
 
     this.velocity += this.gravity;
     this.y += this.velocity;
@@ -55,27 +54,17 @@ class Player {
     console.log("this will be the jump");
     this.velocity = -10;
     //  // if (this.y === height - this.height) {(keep it on the ground)
-    //     
-    //   }
   }
 
   goForward() {
     console.log("this will be going forward");
     this.x += 100;
-
-
-    //  // if (this.y === height - this.height) {(keep it on the ground)
-    //     
-    //   }
   }
 
 
   goBack() {
     console.log("this will be going forward");
     this.x -= 100;
-    //  // if (this.y === height - this.height) {(keep it on the ground)
-    //     
-    //   }
   }
 
 
@@ -85,8 +74,5 @@ class Player {
 
   }
 
-  catchTreasure() {
-
-  }
 
 }

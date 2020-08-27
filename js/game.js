@@ -1,6 +1,7 @@
 class Game {
   constructor() {
     // define the empty array for the bludgers here
+
     this.obstacles = [];
     this.gameLevel = 0;
     this.gameWin = false
@@ -45,8 +46,10 @@ class Game {
       }
 
     ];
+
+     // load in images/gifs here
+
     this.playerImg = loadImage("assets/player/Harry_Potter_Quidditch-removebg-preview.png");
-    // load in images/gifs here
     this.bludgerImg = loadImage("assets/bludger/bludger.png");
     this.startImg = loadImage("assets/Levels/New-Project-2.png")
     this.treasureImg = loadImage("assets/treasure/new-snitch.png");
@@ -56,12 +59,12 @@ class Game {
 
   }
   setupGame() {
+       //  initialize background + player here
+    // NB: we DON'T initialize the coins here because we create them dynamically in the draw
     // this.obstacle = new Obstacle();
-    // this.obstacle.image = this.coinImg;
+
     this.background = new Background();
     this.background.images = this.backgroundImgs;
-    //  initialize background + player here
-    // NB: we DON'T initialize the coins here because we create them dynamically in the draw
     this.player = new Player();
     this.player.image = this.playerImg;
     this.player.gameOverImg = this.gameOverImg;
@@ -71,23 +74,14 @@ class Game {
 
   drawGame() {
 
-    // if (this.player.health > 0) {
-
-    //   image(this.gameOverImg, 100, 100, 100, 100)
-    //   this.gameLevel == 2
-    //   console.log("game over", this.gameLevel);
-    // }
     if (this.gameLevel === 0) {
       // game start
+
       lifeCounter.innerText = this.player.health
       clear();
       this.player.health == 2
       lifeCounter.parentNode.style.visibility = "hidden"
       image(this.startImg, 0, 0, width, height);
-
-
-
-      //image(this.startImg, 180, 250);
 
     }
 
@@ -97,7 +91,9 @@ class Game {
       lifeCounter.parentNode.style.visibility = "visible"
 
       clear();
+
       //  call the draw functions for the player + the background
+
       this.background.drawBackground();
       this.player.drawPlayer();
 
@@ -124,13 +120,8 @@ class Game {
 
       this.treasure.drawTreasure();
 
-
-      // this is checking if you win (catching the snitch)
-
-
-
-
     }
+    
 
     if (this.gameLevel == 2) {
       lifeCounter.innerText = this.player.health
