@@ -6,6 +6,7 @@ class Game {
     this.gameWin = false
   }
   preloadGame() {
+
     this.backgroundImgs = [{
         src: loadImage("assets/background/plx-1.png"),
         x: 0,
@@ -49,8 +50,10 @@ class Game {
     this.bludgerImg = loadImage("assets/bludger/bludger.png");
     this.startImg = loadImage("assets/Levels/New-Project-2.png")
     this.treasureImg = loadImage("assets/treasure/new-snitch.png");
-    this.gameOverImg = loadImage("assets/Levels/Gameover.png");
+    this.gameOverImg = loadImage("/assets/Levels/Game-over.png");
     this.gameWiningImg = loadImage("assets/Levels/You-win-harry.png")
+    
+
   }
   setupGame() {
     // this.obstacle = new Obstacle();
@@ -81,6 +84,8 @@ class Game {
       this.player.health == 2
       lifeCounter.parentNode.style.visibility = "hidden"
       image(this.startImg, 0, 0, width, height);
+      
+
 
       //image(this.startImg, 180, 250);
 
