@@ -16,8 +16,8 @@ class Player {
     // draw the player + jump logic with velocity
     if (this.health <= 0) {
       game.gameLevel = 2
-     // image(this.gameOverImg, 100, 100, 100, 100);
-     // frameRate(0)
+      // image(this.gameOverImg, 100, 100, 100, 100);
+      // frameRate(0)
 
     }
 

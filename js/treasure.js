@@ -19,8 +19,7 @@ class Treasure {
         //console.log(treasureX, treasureY, playerX, playerY);
 
         if (dist(treasureX, treasureY, playerX, playerY) < 50) {
-            console.log("I caught the snicth!")
-
+    
             return true;
 
         }

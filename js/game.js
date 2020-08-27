@@ -3,6 +3,7 @@ class Game {
     // define the empty array for the bludgers here
     this.obstacles = [];
     this.gameLevel = 0;
+    this.gameWin = false
   }
   preloadGame() {
     this.backgroundImgs = [{
@@ -83,7 +84,9 @@ class Game {
 
       //image(this.startImg, 180, 250);
 
-    } else if (this.gameLevel === 1) {
+    }
+
+    if (this.gameLevel === 1) {
 
       lifeCounter.parentNode.style.visibility = "visible"
 
@@ -116,22 +119,31 @@ class Game {
       this.treasure.drawTreasure();
 
 
-      if (this.treasure.collisionSnitch(this.player)) {
-        return false;
-      } else {
-        return true;
-
-      }
+// this is checking if you win (catching the snitch)
+    
 
 
 
-    } else if (this.gameLevel == 2) {
+    }
+
+    if (this.gameLevel == 2) {
       clear()
       lifeCounter.parentNode.style.visibility = "hidden"
       image(this.gameOverImg, 0, 0, width, height);
-      console.log(gameLevel)
-      frameRate(0)
+      console.log(this.gameLevel)
+      // frameRate(0)
     }
+
+    if (this.treasure.collisionSnitch(this.player)) {
+      clear()
+      game.gameLevel ===  3;
+    lifeCounter.parentNode.style.visibility = "hidden"
+    image(this.gameWiningImg, 0, 0, width, height);
+      console.log("I won");
+      // frameRate(0)
+    }
+
+
 
   }
   isGameFinished() {
