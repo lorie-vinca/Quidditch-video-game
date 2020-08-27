@@ -26,7 +26,7 @@ function keyPressed() {
 
   if (keyCode === 37) {
     game.player.goBack();
-  
+
 
   }
 
@@ -36,18 +36,11 @@ function keyPressed() {
 
 
   if (keyCode === 13 && game.gameLevel > 1) {
-    game.player.health = 4
+    game.player.health = 2
     game.gameLevel = 1;
 
   }
 
-  // if (keyCode === 13 && game.gameLevel == 3) {
-  //   game.player.health = 4
-  //   game.gameLevel = 1;
-    
 
-  // }
-
- 
 
 }

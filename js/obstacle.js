@@ -19,19 +19,19 @@ class Obstacle {
     let playerY = playerInfo.y + playerInfo.height / 2;
     // console.log(obstacleX, obstacleY, playerX, playerY);
 
-    if (dist(obstacleX, obstacleY, playerX, playerY) < 50) {
+    if (dist(obstacleX, obstacleY, playerX, playerY) < 80) {
       playerInfo.receiveDamage()
       console.log('aie, I just hit a bludger')
-      
+
       lifeCounter.innerText = playerInfo.health
       console.log(lifeCounter)
-      return true; 
+      return true;
     }
   }
 
 
   drawObstacle() {
-    this.x -= 6;
+    this.x -= 10;
     // console.log("these are the obstacles");
     image(this.image, this.x, this.y, this.width, this.height);
   }

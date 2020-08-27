@@ -76,9 +76,9 @@ class Game {
     // }
     if (this.gameLevel === 0) {
       // game start
-
+      lifeCounter.innerText = this.player.health
       clear();
-
+      this.player.health == 2
       lifeCounter.parentNode.style.visibility = "hidden"
       image(this.startImg, 0, 0, width, height);
 
@@ -87,7 +87,8 @@ class Game {
     }
 
     if (this.gameLevel === 1) {
-
+      lifeCounter.innerText = this.player.health
+      lifeCounter.parentNode.style.visibility = "visible"
       lifeCounter.parentNode.style.visibility = "visible"
 
       clear();
@@ -95,7 +96,7 @@ class Game {
       this.background.drawBackground();
       this.player.drawPlayer();
 
-      if (frameCount % 70 === 0) {
+      if (frameCount % 50 === 0) {
         this.obstacles.push(new Obstacle(this.bludgerImg));
       }
 
@@ -127,11 +128,14 @@ class Game {
     }
 
     if (this.gameLevel == 2) {
+      lifeCounter.innerText = this.player.health
       clear()
       lifeCounter.parentNode.style.visibility = "hidden"
+      this.player.health = 2;
       image(this.gameOverImg, 0, 0, width, height);
-      console.log(this.gameLevel)
-      // frameRate(0)
+      this.player.x = 0;
+      this.player.y = height - this.player.height;
+
     }
 
     if (this.treasure.collisionSnitch(this.player)) {
@@ -144,6 +148,7 @@ class Game {
       image(this.gameWiningImg, 0, 0, width, height);
       this.player.x = 0;
       this.player.y = height - this.player.height;
+      this.player.health = 2;
     }
 
   }

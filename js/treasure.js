@@ -1,13 +1,13 @@
 class Treasure {
 
     constructor(img) {
-        this.height = 70;
-        this.width = 70;
+        this.height = 50;
+        this.width = 50;
         this.x = 400;
         this.y = height - this.height;
         this.image = img;
-        this.speed = 10
-        this.speedX = 8
+        this.speed = 15
+        this.speedX = 10
     }
 
     //define the Snitch collision function
@@ -18,7 +18,7 @@ class Treasure {
         let playerY = playerInfo.y + playerInfo.height / 2;
         //console.log(treasureX, treasureY, playerX, playerY);
 
-        if (dist(treasureX, treasureY, playerX, playerY) < 50) {
+        if (dist(treasureX, treasureY, playerX, playerY) < 80) {
     
             return true;
 
@@ -27,7 +27,6 @@ class Treasure {
 
 
     drawTreasure() {
-
         if (frameCount >= 360) {
             //console.log("help", this.image)
             image(this.image, this.x, this.y, this.width, this.height);
