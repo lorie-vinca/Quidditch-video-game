@@ -47,7 +47,7 @@ class Game {
     this.playerImg = loadImage("assets/player/Harry_Potter_Quidditch-removebg-preview.png");
     // load in images/gifs here
     this.bludgerImg = loadImage("assets/bludger/bludger.png");
-    this.startImg = loadImage("assets/Levels/New Project-2.png")
+    this.startImg = loadImage("assets/Levels/New-Project-2.png")
     this.treasureImg = loadImage("assets/treasure/new-snitch.png");
     this.gameOverImg = loadImage("assets/Levels/Gameover.png");
     this.gameWiningImg = loadImage("assets/Levels/You-win-harry.png")
