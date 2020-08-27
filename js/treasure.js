@@ -1,13 +1,13 @@
 class Treasure {
 
     constructor(img) {
-        this.height = 100;
-        this.width = 100;
+        this.height = 70;
+        this.width = 70;
         this.x = 400;
         this.y = height - this.height;
         this.image = img;
         this.speed = 10
-        this.speedX = 6
+        this.speedX = 8
     }
 
     //define the Snitch collision function

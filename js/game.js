@@ -46,9 +46,10 @@ class Game {
     this.playerImg = loadImage("/assets/player/Harry_Potter_Quidditch-removebg-preview.png");
     // load in images/gifs here
     this.bludgerImg = loadImage("/assets/bludger/bludger.png");
-    this.startImg = loadImage("/assets/Levels/startingpagenew.png")
-    this.treasureImg = loadImage("/assets/treasure/snitch.png");
+    this.startImg = loadImage("/assets/Levels/New Project-2.png")
+    this.treasureImg = loadImage("/assets/treasure/new-snitch.png");
     this.gameOverImg = loadImage("/assets/Levels/Gameover.png");
+    this.gameWiningImg = loadImage("/assets/Levels/You-win-harry.png")
   }
   setupGame() {
     // this.obstacle = new Obstacle();
@@ -59,8 +60,8 @@ class Game {
     // NB: we DON'T initialize the coins here because we create them dynamically in the draw
     this.player = new Player();
     this.player.image = this.playerImg;
-    this.player.gameOverImg = this.gameOverImg
-    this.player.startImg = this.startImg
+    this.player.gameOverImg = this.gameOverImg;
+    this.player.startImg = this.startImg;
     this.treasure = new Treasure(this.treasureImg);
   }
 
@@ -128,6 +129,7 @@ class Game {
       clear()
       lifeCounter.parentNode.style.visibility = "hidden"
       image(this.gameOverImg, 0, 0, width, height);
+      console.log(gameLevel)
       frameRate(0)
     }
 
