@@ -142,6 +142,8 @@ class Game {
       clear()
       lifeCounter.parentNode.style.visibility = "hidden"
       image(this.gameWiningImg, 0, 0, width, height);
+      this.player.x = 0;
+      this.player.y = height - this.player.height;
     }
 
   }
